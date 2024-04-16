@@ -97,6 +97,9 @@ If everything is running correctly, you should now have a basic Open Data Hub co
 |Analytics|visual frontend|http|8999|
 |Postgis|Postgres database|postgres|5555|
 
+`curl.sh` contains some basic calls so you know it's working.
+Refer to the the API documentation and wiki entries linked below for further defails.
+
 For the challenge you will write only to this local instance.
 
 ## Authentication
@@ -121,6 +124,8 @@ With these credentials, using the `client_credentials` flow (which effectively m
 [Some (partly outdated) howtows](https://github.com/noi-techpark/documentation)  
 
 ## Example elaborations
+In the examples directory you can find a basic prototype of how to push data in python.
+
 The repo with our elaborations can be [found here](https://github.com/noi-techpark/bdp-elaborations)
 
 `parking-free-slot-calculation` is by far the simplest one
