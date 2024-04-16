@@ -31,7 +31,7 @@ We strongly suggest you make your app run in a docker container. This way all gr
 There are three APIs you will interact with.
 Note that for this challenge you will interact with the `Time Series / Mobility` APIs, and not it's sibling, the `Content / Tourism` domain
 
-### How does this all fit together?
+### which APIs do I need to use?
 In this challenge you will 
 - Ask **Keycloak** for an authorization token
 - Query the **Ninja API** for e-charging **stations** and their **measurements** of **data type** 'echarging-plug-status'
@@ -84,9 +84,32 @@ The plugs have measurements of data type `echarging-plug-status`, which is 0 or 
 For most challenges it makes sense to work at the plug level, and then aggregate your result up to station. 
 Note that many of our data consumers will want to query on a station level, so you should also provide that data.
 
-## Authentication
+## Running a local environment
+1. Install docker and docker compose
+2. In this directory, run `docker compose up`
+3. Wait for the services to start up
 
-New user/clientID for them
+If everything is running correctly, you should now have a basic Open Data Hub core running:
+|  Service |  Note | Protocol  | Port  |   |
+|---|---|---|---|---|
+|BDP|time series writer API|http|8081|
+|Ninja|time series request API|http|8082|
+|Analytics|visual frontend|http|8999|
+|Postgis|Postgres database|postgres|5555|
+
+For the challenge you will write only to this local instance.
+
+## Authentication
+We use Oauth2 for authentication and authorization. 
+You will need a valid bearer token to gain write access on the API.
+You will probably not need a token to read the data you've wrote from the API.
+
+For this challenge, when using the local instance of the APIs, you can use these credentials:
+
+client_id: odh-mobility-datacollector-development
+client_secret: 7bd46f8f-c296-416d-a13d-dc81e68d0830
+
+With these credentials, using the `client_credentials` flow (which effectively means just pass the credentials above in the request) obtain an authentication token from keycloak and add is as `Authorization: Bearer` header
 
 ## Documentation Resources
 [Swagger Ninja API](mobility.api.opendatahub.com)  
