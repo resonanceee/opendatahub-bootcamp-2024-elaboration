@@ -85,9 +85,12 @@ For most challenges it makes sense to work at the plug level, and then aggregate
 Note that many of our data consumers will want to query on a station level, so you should also provide that data.
 
 ## Running a local environment
-1. Install docker and docker compose
+
+For the challenge you will work only with a local instance.
+
+1. Install docker and docker compose (make sure compose is a recent version 2+)
 2. In this directory, run `docker compose up`
-3. Wait for the services to start up
+3. Wait for the services to start
 
 If everything is running correctly, you should now have a basic Open Data Hub core running:
 |  Service |  Note | Protocol  | Port  |   |
@@ -98,9 +101,7 @@ If everything is running correctly, you should now have a basic Open Data Hub co
 |Postgis|Postgres database|postgres|5555|
 
 `curl.sh` contains some basic calls so you know it's working.
-Refer to the the API documentation and wiki entries linked below for further defails.
-
-For the challenge you will write only to this local instance.
+Refer to the the API documentation and wiki entries linked below for further details.
 
 ## Authentication
 We use Oauth2 for authentication and authorization. 
