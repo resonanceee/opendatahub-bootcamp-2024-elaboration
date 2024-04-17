@@ -39,8 +39,8 @@ curl -X POST -L "http://localhost:8081/json/syncStations/EChargingStation" \
       ]'
 
 
-# Example ninja call
-curl -X GET "http://localhost:8082/tree/ExampleStation" \
+# Example ninja call (should return the two stations pushed above)
+curl -X GET "http://localhost:8082/tree/EChargingStation" \
      --header 'Content-Type: application/json' \
      --header "Authorization: Bearer ${BDP_TOKEN}"
 
