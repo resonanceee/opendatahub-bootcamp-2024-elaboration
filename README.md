@@ -86,7 +86,7 @@ Note that many of our data consumers will want to query on a station level, so y
 
 ## Running a local environment
 
-For the challenge you will work only with a local instance.
+For the challenge you will work with a local instance of the Time Series services.
 
 1. Install docker and docker compose (make sure compose is a recent version 2+)
 2. In this directory, run `docker compose up`
@@ -125,8 +125,10 @@ With these credentials, using the `client_credentials` flow (which effectively m
 [Some (partly outdated) howtows](https://github.com/noi-techpark/documentation)  
 
 ## Example elaborations
-In the examples directory you can find a basic prototype of how to push data in python.
+In the examples directory you can find a basic prototype of how to push data in [python](examples/hello_world_collector.py) and [curl](examples/curl.sh).
 
 The repo with our elaborations can be [found here](https://github.com/noi-techpark/bdp-elaborations)
 
-`parking-free-slot-calculation` is by far the simplest one
+`parking-free-slot-calculation` is by far the simplest one  
+`traffic-a22-data-quality` is written in go and contains libraries for BDP and Ninja already
+
