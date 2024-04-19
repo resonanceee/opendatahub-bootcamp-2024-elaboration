@@ -1,4 +1,5 @@
 import requests
+import json
 
 def fetch_data(url):
     try:
@@ -23,5 +24,12 @@ def fetch_data(url):
 
 # TODO: Replace with your actual URL
 url = "https://mobility.api.opendatahub.com/v2/flat/EChargingStation?limit=200&offset=0&shownull=false&distinct=true"
- 
+
+response = requests.get('https://mobility.api.opendatahub.com/v2/flat/EChargingPlug?limit=-1&offset=0&shownull=false&distinct=true&where=sactive.eq.true&')
+
+response_dict = response.json()
+
+# Pretty Printing JSON string back
+print(json.dumps(response_dict, indent=4, sort_keys=True))
+
 print(fetch_data(url))
